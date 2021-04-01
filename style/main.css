@@ -8,4 +8,210 @@
 body {
   font-family: "Work Sans", sans-serif;
 }
+
+.container {
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+#main_nav {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+}
+
+#main_nav .container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_nav #mb_nav_but {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#main_nav #mb_nav_but:hover span {
+  background-color: #FF3946;
+}
+
+#main_nav #mb_nav_but span {
+  display: block;
+  height: 4px;
+  width: 80%;
+  border: 0px;
+  border-radius: 10px;
+  background-color: #314584;
+  margin: 5px auto;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+
+#main_nav .logo {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#main_nav .logo img {
+  width: 70px;
+}
+
+#main_nav .other_nav_items {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_nav .nav_links {
+  text-transform: capitalize;
+}
+
+#main_nav .nav_links ul {
+  list-style: none;
+}
+
+#main_nav .nav_links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#main_nav .nav_links a {
+  text-decoration: none;
+  color: #314584;
+  font-weight: 600;
+  padding: 15px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+#main_nav .nav_links a:hover {
+  color: #FF3946;
+}
+
+#main_nav .top_contact_us_but {
+  color: #FF3946;
+  background-color: #fff;
+  padding: 10px 20px;
+  border: 0px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-weight: 600;
+  cursor: pointer;
+  width: 170px;
+  height: 50px;
+  -webkit-box-shadow: 0px 4px 6px -4px;
+          box-shadow: 0px 4px 6px -4px;
+}
+
+#main_nav .top_contact_us_but:hover {
+  color: #314584;
+  -webkit-box-shadow: 0px 4px 6px -4px;
+          box-shadow: 0px 4px 6px -4px;
+}
+
+@media (max-width: 992px) {
+  #main_nav .container {
+    min-height: 70px;
+    max-height: 100vh;
+    display: block;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  #main_nav .logo {
+    height: 50px;
+  }
+  #main_nav .other_nav_items {
+    height: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 0;
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 10%;
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  #main_nav .nav_links li {
+    display: block;
+    margin: 20px 0;
+  }
+  #main_nav .top_contact_us_but {
+    width: auto;
+    height: auto;
+  }
+  #main_nav #mb_nav_but {
+    display: block;
+  }
+  #main_nav .span_nav_on span:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translate(2px, 1px);
+            transform: rotate(-45deg) translate(2px, 1px);
+  }
+  #main_nav .span_nav_on span:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(0px, 0px);
+            transform: rotate(45deg) translate(0px, 0px);
+  }
+  #main_nav .span_nav_on span:nth-child(2) {
+    opacity: 0;
+  }
+}
 /*# sourceMappingURL=main.css.map */

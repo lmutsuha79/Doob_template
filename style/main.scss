@@ -1,10 +1,23 @@
 // start variables
 $main_font : 'Work Sans', sans-serif;
 
+$red_color : #FF3946;
+$main_color : #314584;
+$normal_color : #6E757A;
+
+$transition_time : 0.3s;
+
+
 // end variables
 
 
-// Start GLobal rules
+// Start GLobal 
+
+
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -14,4 +27,226 @@ body{
     font-family: $main_font;
 
 }
+// container start
+.container{
+    margin: 0 auto;
+    padding: 10px 20px;
+    // background-color: grey;
+
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+    .container{
+        width: 540px;
+        // background-color: grey;
+
+    
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    .container{
+        width: 720px;
+        // background-color: red;
+
+    
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .container{
+        width: 960px;
+        // background-color: black;    
+    }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    .container{
+        width: 1140px;
+        // background-color: blueviolet;
+
+    
+    }
+ }
+ // container End
+
 // End GLobal rules
+
+
+// main nav bar start
+ #main_nav{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    
+    .container{
+        position: relative;
+        display: flex;
+        height: 70px;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+    } 
+    // mobile button nav: start
+    #mb_nav_but{
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        // background: black;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        &:hover span{
+            background-color: $red_color;
+            
+        }
+        
+        span{
+        display: block;
+        height: 4px;
+        width: 80%;
+        border: 0px;
+        border-radius: 10px;
+        background-color: $main_color;
+        margin: 5px auto;
+        transition:  0.3s;
+        transform-origin: 0 100%
+        
+        }
+   
+
+
+    }
+    
+
+    // mobile button nav: end
+
+
+
+    .logo{
+        flex-grow: 1;
+        img{
+            width: 70px;
+        }
+    }
+
+    .other_nav_items{
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .nav_links{
+        text-transform: capitalize;
+
+        ul{
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            margin: 0 10px;
+        }
+        a{
+            text-decoration: none;
+            color: $main_color;
+            font-weight: 600;
+            padding: 15px;
+            transition: color $transition_time;
+            &:hover{
+                color: $red_color;
+            }
+        }
+    }
+    .top_contact_us_but{
+        color: $red_color;
+        background-color: #fff;
+        padding: 10px 20px;
+        border: 0px;
+        transition: .5s;
+        font-weight: 600;
+        cursor: pointer;
+        width: 170px;
+        height: 50px;
+        box-shadow: 0px 4px 6px -4px;        
+
+        &:hover{
+            color: $main_color;
+            
+            box-shadow: 0px 4px 6px -4px;        
+
+        }
+
+    }
+ }
+ @media (max-width: 992px) { 
+   #main_nav{
+        .container{
+            min-height: 70px;
+            max-height: 100vh;
+            display: block;
+             overflow: hidden;
+             transition: 0.5s;
+
+        }
+        .logo{
+            height: 50px;
+        }
+   
+        .other_nav_items{
+            // display: none;
+            height: 0px;
+            flex-direction: column;
+            padding: 20px 0;
+            font-size: 2rem;
+            text-align: center;
+            padding-left: 10%;
+            transition: height 0.5s;
+            justify-content: flex-start;
+            
+            
+        }
+        .mb_nav_is_open{
+            // display: block;
+
+
+        }
+        .nav_links li {
+            display: block;
+            margin: 20px 0;
+        }
+        .top_contact_us_but{
+            width: auto;
+            height: auto;
+        }
+        #mb_nav_but{
+            display: block;
+
+        }
+
+        .span_nav_on{
+            span:nth-child(3){
+                 transform: rotate( -45deg) translate(2px, 1px);
+             }
+            span:nth-child(1){
+                 transform: rotate( 45deg) translate(0px, 0px);
+             }    
+            span:nth-child(2){
+                 opacity: 0;
+             }
+         }
+
+        
+    }
+ }
+// main nav bar End
+
