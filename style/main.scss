@@ -7,7 +7,7 @@ $normal_color : #6E757A;
 
 $transition_time : 0.3s;
 
-
+$nav_bar_height : 70px;
 // end variables
 
 
@@ -18,7 +18,7 @@ $transition_time : 0.3s;
 
 
 
-*{
+*,h1,h2,h3,a,ul,li,button,span{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,6 +26,16 @@ $transition_time : 0.3s;
 body{
     font-family: $main_font;
 
+}
+a{
+    text-decoration: none;
+    color: $main_color;
+    font-weight: 600;
+    padding: 15px;
+    transition: color $transition_time;
+    &:hover{
+        color: $red_color;
+    }
 }
 // container start
 .container{
@@ -84,11 +94,13 @@ body{
     height: auto;
     position: fixed;
     top: 0;
+    z-index: 999;
+    background-color: white;
     
     .container{
         position: relative;
         display: flex;
-        height: 70px;
+        height: $nav_bar_height;
 
         flex-direction: row;
         justify-content: space-between;
@@ -156,16 +168,7 @@ body{
             display: inline-block;
             margin: 0 10px;
         }
-        a{
-            text-decoration: none;
-            color: $main_color;
-            font-weight: 600;
-            padding: 15px;
-            transition: color $transition_time;
-            &:hover{
-                color: $red_color;
-            }
-        }
+      
     }
     .top_contact_us_but{
         color: $red_color;
@@ -191,7 +194,7 @@ body{
  @media (max-width: 992px) { 
    #main_nav{
         .container{
-            min-height: 70px;
+            min-height: $nav_bar_height;
             max-height: 100vh;
             display: block;
              overflow: hidden;
@@ -249,4 +252,69 @@ body{
     }
  }
 // main nav bar End
+
+
+
+// home section start
+
+.section_title{
+    color: $main_color;
+}
+.para{
+    color: $main_color;
+    line-height: 25px;
+}
+.section_but{
+    background-color: $red_color;
+    color: #fff;
+    border: 1px solid $red_color;
+    transition: background-color .3s;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 20px;
+    &:hover{
+        color: $red_color;
+        background-color: #fff;
+
+    }
+}
+
+#home{
+    height: calc(100vh - 70px);
+    margin-top: $nav_bar_height;
+    .container{
+        padding-top: 70px;
+
+
+    }
+    .home_content{
+        width: 50%;
+    }
+
+    .section_title{
+        font-size: 4rem;
+        font-weight: 600;
+    }
+    .para{
+        color: $normal_color;
+        margin: 30px 0;
+
+    }
+    .section_but{
+        width: 180px;
+        height: 60px;
+        margin-right: 30px;
+
+    }
+    @media (max-width: 992px) { 
+        .home_content{
+            width: 80%;
+        }
+    }
+
+
+
+}
+// home section end
+
 
