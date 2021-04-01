@@ -263,6 +263,7 @@ a{
 .para{
     color: $main_color;
     line-height: 25px;
+    font-weight: 500s;
 }
 .section_but{
     background-color: $red_color;
@@ -282,6 +283,20 @@ a{
 #home{
     height: calc(100vh - 70px);
     margin-top: $nav_bar_height;
+    position: relative;
+    .home_image{
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        width: 40%;
+
+        img{
+            width: 100%;
+            
+        }
+        
+    }
     .container{
         padding-top: 70px;
 
@@ -310,6 +325,39 @@ a{
         .home_content{
             width: 80%;
         }
+        .home_image{
+            width: 50%;
+        }
+        .para{
+            width: 70%;
+        }
+    }
+    @media (max-width: 768px) { 
+        .section_title{
+            font-size: 3rem;
+        }
+        .home_image{
+            width: 60%;
+        }
+        .para{
+            width: 60%;
+        }
+        
+    }
+    @media (max-width: 540px) { 
+        .home_image{
+            display: none;
+        }
+        .home_content{
+            text-align: center;
+            width: 100%;
+        }
+        .para{
+            width: 100%;
+        }
+
+
+        
     }
 
 

@@ -224,6 +224,7 @@ a:hover {
 .para {
   color: #314584;
   line-height: 25px;
+  font-weight: 500s;
 }
 
 .section_but {
@@ -245,6 +246,19 @@ a:hover {
 #home {
   height: calc(100vh - 70px);
   margin-top: 70px;
+  position: relative;
+}
+
+#home .home_image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 40%;
+}
+
+#home .home_image img {
+  width: 100%;
 }
 
 #home .container {
@@ -274,6 +288,37 @@ a:hover {
 @media (max-width: 992px) {
   #home .home_content {
     width: 80%;
+  }
+  #home .home_image {
+    width: 50%;
+  }
+  #home .para {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  #home .section_title {
+    font-size: 3rem;
+  }
+  #home .home_image {
+    width: 60%;
+  }
+  #home .para {
+    width: 60%;
+  }
+}
+
+@media (max-width: 540px) {
+  #home .home_image {
+    display: none;
+  }
+  #home .home_content {
+    text-align: center;
+    width: 100%;
+  }
+  #home .para {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */
