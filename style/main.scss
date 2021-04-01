@@ -1,0 +1,17 @@
+// start variables
+$main_font : 'Work Sans', sans-serif;
+
+// end variables
+
+
+// Start GLobal rules
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: $main_font;
+
+}
+// End GLobal rules
