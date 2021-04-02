@@ -282,14 +282,17 @@ a{
 
 #home{
     height: calc(100vh - 70px);
+    overflow: hidden;
     margin-top: $nav_bar_height;
     position: relative;
+    display: flex;
+    align-items: center;
     .home_image{
         position: absolute;
         z-index: -1;
         top: 0;
         right: 0;
-        width: 40%;
+        width: 520px;
 
         img{
             width: 100%;
@@ -298,8 +301,7 @@ a{
         
     }
     .container{
-        padding-top: 70px;
-
+        
 
     }
     .home_content{
@@ -326,6 +328,7 @@ a{
             width: 80%;
         }
         .home_image{
+            top:10vh;
             width: 50%;
         }
         .para{

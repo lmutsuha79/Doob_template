@@ -245,8 +245,15 @@ a:hover {
 
 #home {
   height: calc(100vh - 70px);
+  overflow: hidden;
   margin-top: 70px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #home .home_image {
@@ -254,15 +261,11 @@ a:hover {
   z-index: -1;
   top: 0;
   right: 0;
-  width: 40%;
+  width: 520px;
 }
 
 #home .home_image img {
   width: 100%;
-}
-
-#home .container {
-  padding-top: 70px;
 }
 
 #home .home_content {
@@ -290,6 +293,7 @@ a:hover {
     width: 80%;
   }
   #home .home_image {
+    top: 10vh;
     width: 50%;
   }
   #home .para {
