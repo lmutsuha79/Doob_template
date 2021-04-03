@@ -310,6 +310,8 @@ a{
         
     }
     .container{
+        display: flex;
+        align-items: center;
         
 
     }
@@ -337,6 +339,7 @@ a{
         }
         .home_image{
             top:10vh;
+            right: -70px;
             width: 50%;
         }
         .para{
@@ -381,6 +384,8 @@ a{
     height: calc(200vh - 70px);
     position: relative;
     margin-top: 100px;
+    
+    
     
     .back_img{
         position: absolute;
@@ -432,7 +437,7 @@ a{
                 box-shadow: 0px 3px 5px  rgb(208,208,208);
                 transition: 0.5s;
                 &:hover{
-                    box-shadow: 0px 3px 5px  rgb(165, 165, 165);
+                    box-shadow: 0px 3px 5px  rgb(182, 182, 182);
 
                 }
                 .section_title{
