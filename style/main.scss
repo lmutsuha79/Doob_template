@@ -52,6 +52,7 @@ a{
 .section_title{
     color: $main_color;
     letter-spacing: 3px;
+    font-size: 2rem;
 }
 .para{
     color: $main_color;
@@ -396,7 +397,6 @@ a{
     margin-top: 100px;
     
     .section_title{
-        font-size: 2rem;
         margin: 25px 0px;
     }
     
@@ -529,6 +529,117 @@ a{
 
 
 //  about section end 
+
+
+// portfolio section start
+#portfolio{
+    height: auto;
+    .container{
+
+    }
+    .section_title{
+        margin: 30px 0px;
+    }
+    .portfolio_gallery{
+        height: calc(220px * 2 + 25px*2);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        grid-template-rows: repeat(auto-fit,220px);
+        grid-gap: 25px;
+        transition: height .5s;
+        .gallery_item{
+            &:nth-child(1){
+                background-image: url(../images/1.png);
+
+            }
+            &:nth-child(2){
+                background-image: url(../images/2.png);
+
+            }
+            &:nth-child(3){
+                background-image: url(../images/3.png);
+
+            } &:nth-child(4){
+                background-image: url(../images/4.png);
+
+            } &:nth-child(5){
+                background-image: url(../images/5.png);
+
+            } &:nth-child(6){
+                background-image: url(../images/6.png);
+
+            } &:nth-child(7){
+                background-image: url(../images/2.png);
+
+            } &:nth-child(8){
+                background-image: url(../images/3.png);
+
+            } &:nth-child(9){
+                background-image: url(../images/1.png);
+
+            }
+            position: relative;
+            z-index: 99;
+            border: 1px solid $main_color;
+            background-size: cover;
+            background-repeat: no-repeat;
+            &::before{
+                content: "";
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                transition: $transition_time;
+                border-radius: 130% 0%;
+
+            }
+            &::after{
+
+                content: "Awsome Work";
+                color: white;
+                font-weight: 600;
+                position: absolute;
+                top: 90%;
+                left: 50%;
+                transform: translate(-50% , -50%);
+                transition: $transition_time;
+                opacity: 0;
+                visibility: hidden;
+
+            }
+        
+        &:hover::after{
+            top: 50%;
+            opacity: 1;
+            visibility: visible;
+        }
+        &:hover::before{
+            background-color: $main_color;
+            opacity: 0.7;
+            border-radius: 0% 0%;
+
+
+        }
+        }        
+    }
+    .gallery_see{
+        color: $red_color;
+        transition: color $transition_time;
+        display: block;
+        text-align: center;
+        // cursor: pointer;
+        // font-weight: 600;
+        &:hover{
+            color: $main_color;
+        }
+        display: block;
+        text-align: center;
+    }
+
+}
+// portfolio section end
+
 
 /*
 1/ in mobile nav version links note aligne corectly == ok

@@ -71,3 +71,26 @@ function shadow_to_nav() {
 
 
 // mobile nav bar js End
+
+// ########################################
+// open totaly the gallery when click
+
+let open_gallery = document.querySelector(".gallery_see");
+let gallery = document.querySelector(".portfolio_gallery");
+open_gallery.onclick = show_gallery;
+let is_gallery_open = 0;
+function show_gallery() {
+    if (is_gallery_open == 0) {
+        gallery.style.height = 'calc(220px * 10 + 25px * 3)';
+        open_gallery.textContent = "See less";
+        is_gallery_open = 1;
+    }
+    else {
+        gallery.style.height = 'calc(220px * 2 + 25px*2)';
+        open_gallery.textContent = "See More";
+
+        is_gallery_open = 0;
+    }
+
+}
+
