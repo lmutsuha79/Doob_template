@@ -354,9 +354,13 @@ a:hover {
 }
 
 #about {
-  height: calc(200vh - 70px);
   position: relative;
   margin-top: 100px;
+}
+
+#about .section_title {
+  font-size: 2rem;
+  margin: 25px 0px;
 }
 
 #about .back_img {
@@ -364,12 +368,11 @@ a:hover {
   z-index: -1;
   top: 0;
   left: 0;
-  width: 310px;
+  width: 20%;
   height: 100%;
 }
 
 #about .first_about {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,6 +380,12 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   padding: 30px 0px;
+}
+
+@media (max-width: 768px) {
+  #about .first_about {
+    height: auto;
+  }
 }
 
 #about .first_about div {
@@ -391,11 +400,6 @@ a:hover {
 #about .first_about .about_title {
   width: 35%;
   margin-right: 40px;
-}
-
-#about .first_about .about_title .section_title {
-  font-size: 2rem;
-  margin-bottom: 40px;
 }
 
 #about .first_about .item {
@@ -445,6 +449,58 @@ a:hover {
   }
 }
 
+#about .second_about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#about .second_about img {
+  width: 50%;
+}
+
+#about .second_about .second_about_content {
+  margin-left: 40px;
+}
+
+#about .second_about .second_about_content .section_title {
+  width: 70%;
+}
+
+@media (max-width: 992px) {
+  #about .second_about .second_about_content .section_title {
+    width: 100%;
+  }
+}
+
+#about .second_about .second_about_content span {
+  color: #FF3946;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  #about .second_about {
+    display: block;
+    height: auto;
+  }
+  #about .second_about img {
+    width: 100%;
+  }
+  #about .second_about .second_about_content {
+    margin-left: 0px;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
 /*
 1/ in mobile nav version links note aligne corectly == ok
 2/ in home secion red button and other links is so colose = ok
@@ -452,5 +508,6 @@ a:hover {
 4/ in mobile version when click on lik show section and hide the nav bars == ok
 4.1/ fix bug hear when nav is on normal size and click on a links = ok
 5/ add shadow to nav when scolling down == ok
+6/ rmove the white space betwen the sections
 */
 /*# sourceMappingURL=main.css.map */

@@ -391,18 +391,21 @@ a{
 
 //  about section start 
 #about{
-    height: calc(200vh - 70px);
+    // height: calc(auto - 70px);
     position: relative;
     margin-top: 100px;
     
-    
+    .section_title{
+        font-size: 2rem;
+        margin: 25px 0px;
+    }
     
     .back_img{
         position: absolute;
         z-index: -1;
         top: 0;
         left: 0;
-        width: 310px;
+        width: 20%;
         height: 100%;
     }
     
@@ -410,11 +413,12 @@ a{
 
     .first_about{
     
-        height: 100vh;
         display: flex;
         align-items: center;
         padding: 30px 0px;
-
+        @media (max-width:768px) {
+            height: auto;
+        }
         
         div{
             height: 70%;
@@ -430,10 +434,7 @@ a{
         .about_title{
             width: 35%;
             margin-right: 40px;
-            .section_title{
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
+           
         }
         .item{
             padding: 40px;
@@ -477,6 +478,45 @@ a{
     
 
       }
+      .second_about{
+          display: flex;
+          margin: 50px 0px;
+          align-items: center;
+          justify-content: center;
+          img{
+            width: 50%;
+            }
+            .second_about_content{
+                margin-left: 40px;
+                .section_title{
+                    width: 70%;
+                    @media (max-width: 992px) {
+                        width: 100%;
+                        
+                    }
+                }
+            span{
+                color: $red_color;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            }
+           
+          @media (max-width:768px) {
+              display: block;
+              height: auto;
+              img{
+                  width: 100%;
+              }
+              .second_about_content{
+                  margin-left: 0px;
+                  margin-top: 20px;
+                  text-align: center;
+              }
+              
+          }
+       
+      }
        
         
 
@@ -497,6 +537,9 @@ a{
 4/ in mobile version when click on lik show section and hide the nav bars == ok
 4.1/ fix bug hear when nav is on normal size and click on a links = ok
 5/ add shadow to nav when scolling down == ok
+6/ rmove the white space betwen the sections
 */
+
+//1/ 
 
 // 0px 3px 14px -7px #31458463;
