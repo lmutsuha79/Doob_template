@@ -87,7 +87,14 @@ a:hover {
   }
 }
 
+.shadow_to_nav {
+  -webkit-box-shadow: 0px 3px 14px -7px #31458463;
+          box-shadow: 0px 3px 14px -7px #31458463;
+}
+
 #main_nav {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   width: 100%;
   height: auto;
   position: fixed;
@@ -222,7 +229,6 @@ a:hover {
     padding: 20px 0;
     font-size: 2rem;
     text-align: center;
-    padding-left: 10%;
     -webkit-transition: height 0.5s;
     transition: height 0.5s;
     -webkit-box-pack: start;
@@ -301,8 +307,8 @@ a:hover {
   margin: 30px 0;
 }
 
-#home .section_but {
-  margin-right: 30px;
+#home a {
+  display: inline-block;
 }
 
 @media (max-width: 992px) {
@@ -334,6 +340,9 @@ a:hover {
 @media (max-width: 540px) {
   #home .home_image {
     display: none;
+  }
+  #home .section_but {
+    padding: 20px 30px;
   }
   #home .home_content {
     text-align: center;
@@ -398,7 +407,7 @@ a:hover {
   display: grid;
   -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-column-gap: 20px;
+  grid-gap: 20px;
 }
 
 #about .first_about .about_items .about_item {
@@ -434,16 +443,12 @@ a:hover {
   }
 }
 
-.hell {
-  width: 100%;
-  height: 100vh;
-}
-
-.hell .item {
-  border: 1px solid black;
-}
-
-.hell .item:nth-child(1) {
-  background-color: red;
-}
+/*
+1/ in mobile nav version links note aligne corectly == ok
+2/ in home secion red button and other links is so colose = ok
+3/ in mobile version add gap when grid transorm to  = ok
+4/ in mobile version when click on lik show section and hide the nav bars == ok
+4.1/ fix bug hear when nav is on normal size and click on a links = ok
+5/ add shadow to nav when scolling down == ok
+*/
 /*# sourceMappingURL=main.css.map */
