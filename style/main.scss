@@ -541,14 +541,25 @@ a{
         margin: 30px 0px;
     }
     .portfolio_gallery{
-        height: calc(220px * 2 + 25px*2);
+        // height: 300px;
         overflow: hidden;
+        // height: 200px;
+        // background-color: aquamarine;
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-        grid-template-rows: repeat(auto-fit,220px);
+        grid-template-rows: minmax(200px,250px);
+        grid-auto-rows: minmax(200px,250px);
+        // grid-template-rows: 300px;
+                // grid-auto-rows: ;
+        // grid-template-rows: repeat(auto-fil,minmax(min-content,max-content));
         grid-gap: 25px;
         transition: height .5s;
+        .item-hidden{
+            display: none;
+//  roh dir height 200px overflow hiden mba3d kabarah wsay 
+        }
         .gallery_item{
+            transition: $transition_time;
             &:nth-child(1){
                 background-image: url(../images/1.png);
 
@@ -649,8 +660,15 @@ a{
 4.1/ fix bug hear when nav is on normal size and click on a links = ok
 5/ add shadow to nav when scolling down == ok
 6/ rmove the white space betwen the sections
+/7 bug when resize the widow in the same time when mobile nav is open;
 */
 
 //1/ 
 
 // 0px 3px 14px -7px #31458463;
+/*
+
+1/ probelm in large screan when click see more (++ height)
+
+*/
+

@@ -510,20 +510,26 @@ a:hover {
 }
 
 #portfolio .portfolio_gallery {
-  height: calc(220px * 2 + 25px*2);
   overflow: hidden;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  -ms-grid-rows: (220px)[auto-fit];
-      grid-template-rows: repeat(auto-fit, 220px);
+  -ms-grid-rows: minmax(200px, 250px);
+      grid-template-rows: minmax(200px, 250px);
+  grid-auto-rows: minmax(200px, 250px);
   grid-gap: 25px;
   -webkit-transition: height .5s;
   transition: height .5s;
 }
 
+#portfolio .portfolio_gallery .item-hidden {
+  display: none;
+}
+
 #portfolio .portfolio_gallery .gallery_item {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   position: relative;
   z-index: 99;
   border: 1px solid #314584;
@@ -627,5 +633,11 @@ a:hover {
 4.1/ fix bug hear when nav is on normal size and click on a links = ok
 5/ add shadow to nav when scolling down == ok
 6/ rmove the white space betwen the sections
+/7 bug when resize the widow in the same time when mobile nav is open;
+*/
+/*
+
+1/ probelm in large screan when click see more (++ height)
+
 */
 /*# sourceMappingURL=main.css.map */
