@@ -88,16 +88,6 @@ function show_gallery() {
             item.style.display = 'block';
         });
 
-
-
-
-
-
-
-
-
-
-
         open_gallery.textContent = "See less";
         is_gallery_open = 1;
     }
@@ -114,4 +104,135 @@ function show_gallery() {
 
 
 }
+
+
+
+// ################################################
+//                   Slider
+
+const next_btn = document.getElementById('btn_left');
+const prev_btn = document.getElementById('btn_right');
+let slider_container = document.querySelector('.slider_container');
+
+let slide_items = document.querySelectorAll('.slide_item');
+
+let first_clon = slide_items[0].cloneNode(true);
+let last_clon = slide_items[slide_items.length - 1].cloneNode(true);
+
+// slider_container.append(first_clon);
+// slider_container.prepend(last_clon);
+
+function make_slider() {
+    console.log('maked');
+    let cont_size = document.querySelector('#blog .container').clientWidth - 40;
+    // 40 psq padding of container;
+    if (cont_size >= 920) {
+        // alert("large")
+        let item_width = (cont_size - 120) / 3;
+
+        slide_items.forEach(item => {
+            console.log('item width ok');
+            item.style.width = `${item_width}px`;
+            // item.style.width = 'calc((${cont_size}px - 120px)/3))';
+        });
+        //  to make item 1 in positon 1 in loading
+        let wrap_default = item_width + 40;
+
+        slider_container.style.left = `${-wrap_default}px`;
+        return 3;
+
+    }
+    else if (cont_size > 500 && cont_size < 920) {
+        // alert("med")
+        let item_width = (cont_size - 80) / 2;
+        slide_items.forEach(item => {
+
+            item.style.width = `${item_width}px`;
+        });
+        //  to make item 1 in positon 1 in loading
+
+        let wrap_default = item_width + 40;
+
+        slider_container.style.left = `${-wrap_default}px`;
+        return 2;
+
+
+
+
+    }
+    else {
+
+        let item_width = (cont_size - 40) / 1;
+        slide_items.forEach(item => {
+
+            item.style.width = `${item_width}px`;
+        });
+        //  to make item 1 in positon 1 in loading
+
+        let wrap_default = item_width + 40;
+
+        slider_container.style.left = `${-wrap_default}px`;
+        return 1;
+
+
+    }
+
+
+}
+window.onload = make_slider;
+window.onresize = make_slider;
+let index = 1;
+let stop_index;
+change_slide = () => {
+    let item_width = slide_items[0].clientWidth;
+    // let item_width = make_slider();
+    let num_of_items = make_slider();
+    let slide_wrap;
+    if (num_of_items == 1) {
+        slide_wrap = -item_width * num_of_items - 40;
+        stop_index = 7;
+    }
+    else if (num_of_items == 2) {
+        slide_wrap = -item_width * num_of_items - 80;
+        stop_index = 4;
+
+    }
+    else {
+        slide_wrap = -item_width * num_of_items - 120;
+        stop_index = 3;
+
+    }
+    slider_container.style.transition = `0.3s`;
+    console.log('slide_wrap size left = ', slide_wrap);
+    console.log(`item widt = ${item_width} num of item = ${num_of_items}`);
+    // because we dont forgget the default slide wrap ;
+    slider_container.style.left = `${(-item_width - 40) + (slide_wrap * index)}px`;
+    console.log(index);
+    // wait tell transtion end than check the condition;
+    index++;
+
+    slider_container.addEventListener('transitionend', () => {
+
+        if (index >= stop_index) {
+            slider_container.style.transition = 'none';
+            slider_container.style.left = `${-item_width - 40}px`;
+            index = 1;
+
+
+        }
+    });
+
+
+
+
+
+}
+next_btn.onclick = change_slide;
+slider_container.addEventListener('swipeleft', change_slide);
+
+// change_slide();
+
+
+
+
 
