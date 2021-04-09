@@ -644,7 +644,6 @@ a:hover {
 #blog .blog_slider {
   width: 100%;
   overflow-x: hidden;
-  border: 1px solid black;
 }
 
 #blog .blog_slider .slider_container {
