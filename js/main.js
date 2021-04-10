@@ -202,7 +202,7 @@ change_slide = () => {
         stop_index = 3;
 
     }
-    slider_container.style.transition = `0.5s`;
+    slider_container.style.transition = `0.7s`;
     console.log('slide_wrap size left = ', slide_wrap);
     console.log(`item widt = ${item_width} num of item = ${num_of_items}`);
     // because we dont forgget the default slide wrap ;
@@ -229,18 +229,34 @@ change_slide = () => {
 }
 let drag_start, drag_end;
 next_btn.onclick = change_slide;
-slider_container.addEventListener('dragstart', (s) => {
-    drag_start = s.clientX;
-    console.log(`drag start ${drag_start}`)
+// slider_container.addEventListener('dragstart', (s) => {
+//     drag_start = s.clientX;
+//     console.log(`drag start ${drag_start}`)
+// });
+// slider_container.addEventListener('dragend', (e) => {
+//     drag_end = e.clientX;
+//     console.log(`drag end ${drag_end}`);
+//     if (drag_end - drag_start < 0) {
+//         change_slide();
+//     }
+
+// });
+slider_container.addEventListener('touchstart', (e) => {
+    drag_start = e.touches[0].clientX;
+    console.log('start  ', drag_start);
 });
-slider_container.addEventListener('dragend', (e) => {
-    drag_end = e.clientX;
-    console.log(`drag end ${drag_end}`);
+
+slider_container.addEventListener('touchend', (e) => {
+    drag_end = e.changedTouches[0].clientX;
+    console.log('end', drag_end);
     if (drag_end - drag_start < 0) {
+        console.log('ok')
         change_slide();
-    }
+    };
 
 });
+
+
 // slider_container.addEventListener('ondragleave', (t) => {
 
 // });
