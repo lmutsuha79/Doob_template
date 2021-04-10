@@ -115,9 +115,9 @@ const prev_btn = document.getElementById('btn_right');
 let slider_container = document.querySelector('.slider_container');
 
 let slide_items = document.querySelectorAll('.slide_item');
-
-let first_clon = slide_items[0].cloneNode(true);
-let last_clon = slide_items[slide_items.length - 1].cloneNode(true);
+//  cloning 
+// let first_clon = slide_items[0].cloneNode(true);
+// let last_clon = slide_items[slide_items.length - 1].cloneNode(true);
 
 // slider_container.append(first_clon);
 // slider_container.prepend(last_clon);
@@ -136,10 +136,20 @@ function make_slider() {
             // item.style.width = 'calc((${cont_size}px - 120px)/3))';
         });
         //  to make item 1 in positon 1 in loading
-        let wrap_default = item_width + 40;
+        let wrap_default = item_width * 3 + 120;
 
         slider_container.style.left = `${-wrap_default}px`;
-        return 3;
+        // return 3;
+        let obj = {
+
+            num_of_items: 3,
+            wrap_default: wrap_default,
+
+        }
+
+        return obj;
+
+
 
     }
     else if (cont_size > 500 && cont_size < 920) {
@@ -151,11 +161,17 @@ function make_slider() {
         });
         //  to make item 1 in positon 1 in loading
 
-        let wrap_default = item_width + 40;
+        let wrap_default = item_width * 3 + 120;
 
         slider_container.style.left = `${-wrap_default}px`;
-        return 2;
+        let obj = {
 
+            num_of_items: 2,
+            wrap_default: wrap_default,
+
+        }
+
+        return obj;
 
 
 
@@ -169,10 +185,17 @@ function make_slider() {
         });
         //  to make item 1 in positon 1 in loading
 
-        let wrap_default = item_width + 40;
+        let wrap_default = item_width * 3 + 120;
 
         slider_container.style.left = `${-wrap_default}px`;
-        return 1;
+        let obj = {
+
+            num_of_items: 1,
+            wrap_default: wrap_default,
+
+        }
+
+        return obj;
 
 
     }
@@ -186,28 +209,40 @@ let stop_index;
 change_slide = () => {
     let item_width = slide_items[0].clientWidth;
     // let item_width = make_slider();
-    let num_of_items = make_slider();
+    // let num_of_items = make_slider()[num_of_items];
+    let num_of_items = make_slider().num_of_items;
+    let wrap_default = make_slider().wrap_default;
+    // console.log('wrap default ======', make_slider().wrap_default);
     let slide_wrap;
+
     if (num_of_items == 1) {
         slide_wrap = -item_width * num_of_items - 40;
+        // slide_wrap = -wrap_default;
         stop_index = 7;
+
     }
     else if (num_of_items == 2) {
         slide_wrap = -item_width * num_of_items - 80;
+        // slide_wrap = -wrap_default;
+
         stop_index = 4;
+
+
 
     }
     else {
         slide_wrap = -item_width * num_of_items - 120;
+        // slide_wrap = -wrap_default;
+
         stop_index = 3;
+
+
 
     }
     slider_container.style.transition = `0.7s`;
-    console.log('slide_wrap size left = ', slide_wrap);
-    console.log(`item widt = ${item_width} num of item = ${num_of_items}`);
+
     // because we dont forgget the default slide wrap ;
-    slider_container.style.left = `${(-item_width - 40) + (slide_wrap * index)}px`;
-    console.log(index);
+    slider_container.style.left = `${(-wrap_default) + (slide_wrap * index)}px`;
     // wait tell transtion end than check the condition;
     index++;
 
@@ -215,7 +250,7 @@ change_slide = () => {
 
         if (index >= stop_index) {
             slider_container.style.transition = 'none';
-            slider_container.style.left = `${-item_width - 40}px`;
+            slider_container.style.left = `${-wrap_default}px`;
             index = 1;
 
 
@@ -229,18 +264,20 @@ change_slide = () => {
 }
 let drag_start, drag_end;
 next_btn.onclick = change_slide;
-// slider_container.addEventListener('dragstart', (s) => {
-//     drag_start = s.clientX;
-//     console.log(`drag start ${drag_start}`)
-// });
-// slider_container.addEventListener('dragend', (e) => {
-//     drag_end = e.clientX;
-//     console.log(`drag end ${drag_end}`);
-//     if (drag_end - drag_start < 0) {
-//         change_slide();
-//     }
+//  for pc
+slider_container.addEventListener('dragstart', (s) => {
+    drag_start = s.clientX;
+    console.log(`drag start ${drag_start}`)
+});
+slider_container.addEventListener('dragend', (e) => {
+    drag_end = e.clientX;
+    console.log(`drag end ${drag_end}`);
+    if (drag_end - drag_start < 0) {
+        change_slide();
+    }
 
-// });
+});
+// four touche devices
 slider_container.addEventListener('touchstart', (e) => {
     drag_start = e.touches[0].clientX;
     console.log('start  ', drag_start);
