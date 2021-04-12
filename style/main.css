@@ -739,6 +739,7 @@ a:hover {
 }
 
 #contact .contact_inp {
+  width: 100%;
   padding: 30px;
   border: 0px;
   background-color: #f4fafe;
@@ -761,6 +762,33 @@ a:hover {
 
 #contact .contact_inp::placeholder {
   color: #314584;
+}
+
+#contact #email_input {
+  position: relative;
+}
+
+#contact #email_input input {
+  outline-style: none;
+  outline-width: 1px;
+  outline-color: #FF3946;
+}
+
+#contact #check_mes {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #FF3946;
+  position: absolute;
+  top: -25px;
+  right: 10px;
+  z-index: 99;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 /*

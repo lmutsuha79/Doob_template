@@ -298,23 +298,72 @@ slider_container.addEventListener('touchend', (e) => {
 //  js for contact form 
 
 // js for email :
+function ValidateEmail(mail) {
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+        return (true)
+    }
+    return (false)
+}
 
 let email_inp = document.getElementById('email_inp');
-
-console.log(email_inp);
+let email_chek_mes = document.getElementById('check_mes');
 email_inp.onkeyup = (e) => {
     let email_value = email_inp.value;
-    let last_mail_char = email_value[email_value.length - 1];
-    if (email_value.indexOf('@') > -1 && email_value.indexOf('.') > -1) {
-        console.log('ok');
+    let email_result = ValidateEmail(email_value);
+
+    if (email_value != '') {
+        if (email_result == true) {
+            email_inp.style.outlineStyle = 'auto';
+            email_inp.style.outlineColor = 'green';
+
+
+
+            email_chek_mes.style.transform = 'translateY(0px)';
+
+            email_chek_mes.style.color = 'green';
+            email_chek_mes.innerText = 'Valide'
+            email_chek_mes.style.opacity = 1;
+
+
+
+            email_chek_mes.style.visibility = 'visible'
+
+            setTimeout(() => {
+                email_inp.style.outlineStyle = 'none';
+
+                email_chek_mes.style.transform = 'translateY(10px)';
+                email_chek_mes.style.opacity = 0;
+
+                email_chek_mes.style.visibility = 'hidden'
+
+
+            }, 1500);
+
+
+
+
+        } else {
+
+
+
+            email_chek_mes.style.color = 'red';
+            email_chek_mes.innerText = 'invalid email address'
+            email_chek_mes.style.visibility = 'visible'
+            email_chek_mes.style.opacity = 1;
+            email_inp.style.outlineStyle = 'auto';
+            email_chek_mes.style.transform = 'translateY(-10px)';
+
+        }
     }
     else {
-        console.log('no');
+
     }
+
+
 }
 
 
-let names = 'yasser';
-console.log(names.match('s'));
+
+
 
 

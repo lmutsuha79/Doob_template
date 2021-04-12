@@ -788,6 +788,7 @@ a{
     }
 
     .contact_inp{
+        width: 100%;
         padding: 30px;
         border: 0px;
         background-color: $light-blue;
@@ -797,9 +798,32 @@ a{
         &::placeholder{
             color: #314584;
         }
+        
       
         
 
+    }
+    #email_input{
+        position: relative;
+        input{
+            outline-style: none;
+            outline-width: 1px;
+            outline-color: $red_color;
+        }
+    }
+   
+    #check_mes{
+        transition: $transition_time;
+        opacity: 0;
+        visibility: hidden;
+        width: max-content;
+        color: $red_color;
+        position: absolute;
+        top: -25px;
+        right: 10px;
+        z-index: 99;
+        transform: translateY(10px);
+        
     }
 }
 
