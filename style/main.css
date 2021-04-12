@@ -388,8 +388,8 @@ a:hover {
   z-index: -1;
   top: 0;
   left: 0;
-  width: 20%;
-  height: 100%;
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
 }
 
 #about .first_about {
@@ -517,6 +517,7 @@ a:hover {
 
 #portfolio {
   height: auto;
+  position: relative;
 }
 
 #portfolio .section_title {
