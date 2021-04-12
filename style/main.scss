@@ -825,6 +825,21 @@ a{
         transform: translateY(10px);
         
     }
+    .section_but{
+        display: block;
+        margin: 30px auto;
+    }
+    .no_active{
+        background-color: $normal_color;
+        color: white;
+        border-color: $normal_color;
+
+        &:hover{
+            color: white;
+            background-color: $normal_color;
+        }
+      
+    }
 }
 
 // contact us section end

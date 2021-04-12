@@ -791,6 +791,22 @@ a:hover {
           transform: translateY(10px);
 }
 
+#contact .section_but {
+  display: block;
+  margin: 30px auto;
+}
+
+#contact .no_active {
+  background-color: #6E757A;
+  color: white;
+  border-color: #6E757A;
+}
+
+#contact .no_active:hover {
+  color: white;
+  background-color: #6E757A;
+}
+
 /*
 1/ in mobile nav version links note aligne corectly == ok
 2/ in home secion red button and other links is so colose = ok

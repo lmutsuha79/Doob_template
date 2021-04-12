@@ -305,6 +305,8 @@ function ValidateEmail(mail) {
     return (false)
 }
 
+let contact_but_send = document.getElementById('contact_but_send');
+
 let email_inp = document.getElementById('email_inp');
 let email_chek_mes = document.getElementById('check_mes');
 email_inp.onkeyup = (e) => {
@@ -312,7 +314,10 @@ email_inp.onkeyup = (e) => {
     let email_result = ValidateEmail(email_value);
 
     if (email_value != '') {
+
         if (email_result == true) {
+            contact_but_send.classList.remove('no_active');
+
             email_inp.style.outlineStyle = 'auto';
             email_inp.style.outlineColor = 'green';
 
@@ -345,6 +350,7 @@ email_inp.onkeyup = (e) => {
         } else {
 
 
+            contact_but_send.classList.add('no_active');
 
             email_chek_mes.style.color = 'red';
             email_chek_mes.innerText = 'invalid email address'
@@ -356,6 +362,7 @@ email_inp.onkeyup = (e) => {
         }
     }
     else {
+        contact_but_send.classList.add('no_active');
 
     }
 
