@@ -316,6 +316,7 @@ email_inp.onkeyup = (e) => {
     if (email_value != '') {
 
         if (email_result == true) {
+            //  valide mail
             contact_but_send.classList.remove('no_active');
 
             email_inp.style.outlineStyle = 'auto';
@@ -327,14 +328,17 @@ email_inp.onkeyup = (e) => {
 
             email_chek_mes.style.color = 'green';
             email_chek_mes.innerText = 'Valide'
+
+            email_chek_mes.style.visibility = 'visible';
             email_chek_mes.style.opacity = 1;
 
 
 
-            email_chek_mes.style.visibility = 'visible'
 
             setTimeout(() => {
                 email_inp.style.outlineStyle = 'none';
+                email_inp.style.outlineColor = 'red';
+
 
                 email_chek_mes.style.transform = 'translateY(10px)';
                 email_chek_mes.style.opacity = 0;
@@ -342,21 +346,25 @@ email_inp.onkeyup = (e) => {
                 email_chek_mes.style.visibility = 'hidden'
 
 
-            }, 1500);
+            }, 500);
 
 
 
 
         } else {
 
+            // note valid mail
 
             contact_but_send.classList.add('no_active');
 
-            email_chek_mes.style.color = 'red';
             email_chek_mes.innerText = 'invalid email address'
             email_chek_mes.style.visibility = 'visible'
             email_chek_mes.style.opacity = 1;
+            email_chek_mes.style.color = 'red';
+
+            email_inp.style.outlineColor = 'red';
             email_inp.style.outlineStyle = 'auto';
+
             email_chek_mes.style.transform = 'translateY(-10px)';
 
         }
@@ -372,5 +380,6 @@ email_inp.onkeyup = (e) => {
 
 
 
+// ################################################
 
 
