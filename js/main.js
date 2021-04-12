@@ -294,14 +294,27 @@ slider_container.addEventListener('touchend', (e) => {
 });
 
 
-// slider_container.addEventListener('ondragleave', (t) => {
+// ################################################
+//  js for contact form 
 
-// });
+// js for email :
+
+let email_inp = document.getElementById('email_inp');
+
+console.log(email_inp);
+email_inp.onkeyup = (e) => {
+    let email_value = email_inp.value;
+    let last_mail_char = email_value[email_value.length - 1];
+    if (email_value.indexOf('@') > -1 && email_value.indexOf('.') > -1) {
+        console.log('ok');
+    }
+    else {
+        console.log('no');
+    }
+}
 
 
-// change_slide();
-
-
-
+let names = 'yasser';
+console.log(names.match('s'));
 
 

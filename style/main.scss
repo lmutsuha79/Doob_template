@@ -5,6 +5,8 @@ $red_color : #FF3946;
 $main_color : #314584;
 $normal_color : #6E757A;
 
+$light-blue : #f4fafe;
+
 $transition_time : 0.3s;
 
 $nav_bar_height : 70px;
@@ -723,6 +725,7 @@ a{
       
     }
     .slide_controler{
+       
         position: absolute;
         top: 0;
         right: 20px;
@@ -737,16 +740,70 @@ a{
             &:hover{
                 color: $red_color;
             }
+            &:nth-child(1){
+                color: gray;
+           
+                &:hover{
+                    color: gray;
+                }
+            }
+           
         }
     }
 }
 
 // blog section end
+// ################################################
 
+// contact us section start
 
+#contact{
+    margin-top: 50px;
+    .container{
 
+    }
+    .contact_form{
+        margin-top: 30px;
+        form{
+            
+            // display: grid;
+            // grid-template-columns: auto auto;
+            // grid-template-rows: auto auto;
 
+            // grid-gap: 30px;
+            // grid-auto-columns: repeat(auto-fil,1fr);
+        }
+        .row{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-gap: 30px;
+            .contact_inp{
+                height: 30px;
+            }
+        }
+        textarea{
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
 
+    .contact_inp{
+        padding: 30px;
+        border: 0px;
+        background-color: $light-blue;
+        outline: none;
+        color: $main_color;
+        font-weight: 600;
+        &::placeholder{
+            color: #314584;
+        }
+      
+        
+
+    }
+}
+
+// contact us section end
 
 
 

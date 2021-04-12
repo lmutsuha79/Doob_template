@@ -705,6 +705,64 @@ a:hover {
   color: #FF3946;
 }
 
+#blog .slide_controler ion-icon:nth-child(1) {
+  color: gray;
+}
+
+#blog .slide_controler ion-icon:nth-child(1):hover {
+  color: gray;
+}
+
+#contact {
+  margin-top: 50px;
+}
+
+#contact .contact_form {
+  margin-top: 30px;
+}
+
+#contact .contact_form .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+#contact .contact_form .row .contact_inp {
+  height: 30px;
+}
+
+#contact .contact_form textarea {
+  width: 100%;
+  margin-top: 30px;
+}
+
+#contact .contact_inp {
+  padding: 30px;
+  border: 0px;
+  background-color: #f4fafe;
+  outline: none;
+  color: #314584;
+  font-weight: 600;
+}
+
+#contact .contact_inp::-webkit-input-placeholder {
+  color: #314584;
+}
+
+#contact .contact_inp:-ms-input-placeholder {
+  color: #314584;
+}
+
+#contact .contact_inp::-ms-input-placeholder {
+  color: #314584;
+}
+
+#contact .contact_inp::placeholder {
+  color: #314584;
+}
+
 /*
 1/ in mobile nav version links note aligne corectly == ok
 2/ in home secion red button and other links is so colose = ok
