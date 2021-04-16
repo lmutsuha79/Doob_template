@@ -381,4 +381,26 @@ email_inp.onkeyup = (e) => {
 
 
 // ################################################
-// slid to to but:
+// scroll  to Top but:
+let scroll_top_but = document.getElementById('move_to_top');
+let active_hidde_top_but = () => {
+    let scrolY_position = window.scrollY;
+    console.log(scrolY_position);
+    if (scrolY_position >= 500) {
+        scroll_top_but.style.opacity = '1';
+        scroll_top_but.style.visibility = 'visible';
+
+
+    } else {
+
+        scroll_top_but.style.opacity = '0';
+        scroll_top_but.style.visibility = 'hidden';
+
+    }
+
+}
+window.addEventListener('scroll', active_hidde_top_but);
+
+scroll_top_but.onclick = () => {
+    window.scrollTo(0, 0);
+}

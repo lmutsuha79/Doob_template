@@ -942,7 +942,42 @@ a{
 }
 // footer end
 
+// #####################################
 
+// move to top but  start
+
+#move_to_top{
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: $red_color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: $transition_time;
+    z-index: 10000;
+    box-shadow: 0px 0px 6px 2px $red_color;
+    &:hover{
+        background-color:#e82835;
+        
+
+    }
+    ion-icon{
+        font-size: 2rem;
+        color: $main_color;
+    }
+
+
+}
+
+
+// move to top but  end
 
 
 

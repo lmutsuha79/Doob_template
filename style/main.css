@@ -921,6 +921,42 @@ a:hover {
   color: #FF3946;
 }
 
+#move_to_top {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #FF3946;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 10000;
+  -webkit-box-shadow: 0px 0px 6px 2px #FF3946;
+          box-shadow: 0px 0px 6px 2px #FF3946;
+}
+
+#move_to_top:hover {
+  background-color: #e82835;
+}
+
+#move_to_top ion-icon {
+  font-size: 2rem;
+  color: #314584;
+}
+
 /*
 1/ in mobile nav version links note aligne corectly == ok
 2/ in home secion red button and other links is so colose = ok
