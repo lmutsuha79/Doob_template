@@ -887,8 +887,16 @@ a:hover {
   color: #FF3946;
 }
 
-#footer h6 {
+#footer h6, #footer a {
   color: white;
+  padding: 0px 5px;
+}
+
+#footer a:hover {
+  color: #FF3946;
+}
+
+#footer h6 {
   font-weight: 600;
   font-size: 1.5;
 }

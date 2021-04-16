@@ -915,11 +915,19 @@ a{
             }
         }
     }
-    h6{
+    h6,a{
         color: white;
+        padding: 0px 5px;
+    }
+    a:hover{
+        color: $red_color;
+    }
+    h6{
+        
         font-weight: 600;
         font-size: 1.5;
-        // margin: 30px 0px;
+        
+
 
     }
     .social_links{
