@@ -340,7 +340,7 @@ email_inp.onkeyup = (e) => {
                 email_inp.style.outlineColor = 'red';
 
 
-                email_chek_mes.style.transform = 'translateY(10px)';
+                email_chek_mes.style.transform = 'translateY(7px)';
                 email_chek_mes.style.opacity = 0;
 
                 email_chek_mes.style.visibility = 'hidden'
@@ -365,7 +365,7 @@ email_inp.onkeyup = (e) => {
             email_inp.style.outlineColor = 'red';
             email_inp.style.outlineStyle = 'auto';
 
-            email_chek_mes.style.transform = 'translateY(-10px)';
+            email_chek_mes.style.transform = 'translateY(-3px)';
 
         }
     }
@@ -381,5 +381,4 @@ email_inp.onkeyup = (e) => {
 
 
 // ################################################
-
-
+// slid to to but:
